@@ -8,3 +8,4 @@ function Sideber() {
 }
 
 export default Sideber
+// Path: src/components/Sideber.css 
