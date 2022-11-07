@@ -1,7 +1,12 @@
 import React from "react";
 import "./Main.css";
 
-function Main() {
+const Main = ({activeNote}) => {
+
+  if (!activeNote) {
+    return <div className="no-active-note">No note selected</div>;
+  }
+
   return (
     <div className="app-main">
       <div className="app-main-note-edit">
@@ -9,8 +14,8 @@ function Main() {
         <textarea id="" placeholder="put in content of the note" />
       </div>
       <div className="app-main-note-preview">
-        <h1 className="preview-title">Title</h1>
-        <div className="markdown-preview">content of the note</div>
+        <h1 className="preview-title">{activeNote.title}</h1>
+        <div className="markdown-preview">{activeNote.content}</div>
       </div>
     </div>
   );
