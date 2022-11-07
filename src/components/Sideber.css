@@ -1,11 +1,11 @@
-button{
-    background:none;
-    border:none;
-    color: #08c;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    cursor: pointer;
+button {
+  background: none;
+  border: none;
+  color: #08c;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .app-sidebar {
@@ -20,22 +20,34 @@ button{
   padding: 25px;
 }
 
-.app-sidebar-header h1{
-    margin:0;
+.app-sidebar-header h1 {
+  margin: 0;
 }
 
-.app-sidebar-notes{
-    height:calc(100vh - 70px);
-    overflow-y:scroll;
+.app-sidebar-notes {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
 }
 
-.app-sidebar-note{
-    padding: 25px;
-    cursor: pointer;
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.sidebar-note-titile{
-    display: flex;
-    justify-content: space-between;
+.sidebar-note-titile {
+  display: flex;
+  justify-content: space-between;
 }
 
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+
+.app-sidebar-note small {
+  color: #999;
+}
+
+.app-sidebar-note:hover {
+  background: #f1f0f0;
+}
