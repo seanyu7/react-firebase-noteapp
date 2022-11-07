@@ -51,3 +51,12 @@ button {
 .app-sidebar-note:hover {
   background: #f1f0f0;
 }
+
+.app-sidebar-note.active{
+  background: rgb(235, 194, 139);
+  color: rgb(79, 7, 233);
+}
+
+.appsidebar-note.active small{
+  color:black;
+}
