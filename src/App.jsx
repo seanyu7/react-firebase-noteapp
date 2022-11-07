@@ -26,6 +26,10 @@ function App() {
     setNotes(notes.filter((note) => note.id !== id));
   };
 
+const getActiveNote = () => {
+  return notes.find((note) => note.id === activeNote);
+};
+
   return (
     <div className="App">
       <Sideber
@@ -35,7 +39,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main />
+      <Main activeNote={getActiveNote()}/>
     </div>
   );
 }
