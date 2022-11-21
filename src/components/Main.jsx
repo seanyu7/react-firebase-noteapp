@@ -4,7 +4,7 @@ import "./Main.css";
 const Main = ({ activeNote, onUpdateNote }) => {
   const onEditNote = (key, value) => {
     onUpdateNote({
-      id: activeNote.id,
+      ...activeNote,
       [key]: value,
       modDate: Date.now(),
     });

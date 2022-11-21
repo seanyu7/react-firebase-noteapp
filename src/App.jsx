@@ -26,22 +26,22 @@ function App() {
     setNotes(notes.filter((note) => note.id !== id));
   };
 
-const getActiveNote = () => {
-  return notes.find((note) => note.id === activeNote);
-};
+  const getActiveNote = () => {
+    return notes.find((note) => note.id === activeNote);
+  };
 
-const onUpdateNote = (updatedNote) =>{
-//修正された新しいノートの配列を返すような動きをしてくれる配列を作る。
-const updatedNotesArray = notes.map((note) => {
-  if (note.id === updatedNote.id) {
-    return updatedNote;
-} else{
-  return note;
-}
-});
+  const onUpdateNote = (updatedNote) => {
+    //修正された新しいノートの配列を返すような動きをしてくれる配列を作る。
+    const updatedNotesArray = notes.map((note) => {
+      if (note.id === updatedNote.id) {
+        return updatedNote;
+      } else {
+        return note;
+      }
+    });
 
-setNotes(updatedNotesArray);
-};
+    setNotes(updatedNotesArray);
+  };
 
   return (
     <div className="App">
@@ -52,7 +52,7 @@ setNotes(updatedNotesArray);
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main activeNote={getActiveNote()}/>
+      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote}/>
     </div>
   );
 }
