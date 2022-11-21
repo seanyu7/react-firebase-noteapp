@@ -30,6 +30,19 @@ const getActiveNote = () => {
   return notes.find((note) => note.id === activeNote);
 };
 
+const onUpdateNote = (updatedNote) =>{
+//修正された新しいノートの配列を返すような動きをしてくれる配列を作る。
+const updatedNotesArray = notes.map((note) => {
+  if (note.id === updatedNote.id) {
+    return updatedNote;
+} else{
+  return note;
+}
+});
+
+setNotes(updatedNotesArray);
+};
+
   return (
     <div className="App">
       <Sideber
