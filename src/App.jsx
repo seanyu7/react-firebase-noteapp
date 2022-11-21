@@ -15,7 +15,7 @@ function App() {
       title: "New Note",
       content:
         "learning react from the beginning and building a app from scratch",
-      lastModified: Date.now(),
+      modDate: Date.now(),
     };
     setNotes([...notes, newNote]);
     console.log(notes);

@@ -20,7 +20,10 @@ function Sideber({ onAddNote, notes, deleteNote, activeNote, setActiveNote }) {
             </div>
             <button onClick={() => deleteNote(note.id)}>delete</button>
             <p>{note.content}</p>
-            <small>The last edited date : xx/xx</small>
+            <small>The last edited date :{new Date(note.modDate).toLocaleDateString("jp",{
+              hour: "2-digit",
+              minute: "2-digit",
+            })}</small>
           </div>
         ))}
       </div>
