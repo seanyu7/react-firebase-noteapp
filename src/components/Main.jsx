@@ -1,8 +1,14 @@
 import React from "react";
 import "./Main.css";
 
-const Main = ({ activeNote }) => {
-  const onEditNote = () => {};
+const Main = ({ activeNote, onUpdateNote }) => {
+  const onEditNote = (key, value) => {
+    onUpdateNote({
+      id: activeNote.id,
+      [key]: value,
+      modDate: Date.now(),
+    });
+  };
 
   if (!activeNote) {
     return <div className="no-active-note">No note selected</div>;
@@ -12,7 +18,8 @@ const Main = ({ activeNote }) => {
     <div className="app-main">
       <div className="app-main-note-edit">
         <input
-          type="title"
+          id="title"
+          type="text"
           placeholder="New Title"
           value={activeNote.title}
           onChange={(e) => onEditNote("title", e.target.value)}
