@@ -3,10 +3,17 @@ import Main from "./components/Main";
 import Sideber from "./components/Sideber";
 import { useState } from "react";
 import uuid from "react-uuid";
+import { useEffect } from "react";
 
 function App() {
   const [notes, setNotes] = useState([]);
   const [activeNote, setActiveNote] = useState(false);
+
+useEffect(() => {
+  //ローカルストレージに保存する。
+  //ローカルストレージに保存することによって、ブラウザを閉じてもデータが消えない環境の構築が可能となる。
+
+},[notes])
 
   const onAddNote = () => {
     console.log("add note");
