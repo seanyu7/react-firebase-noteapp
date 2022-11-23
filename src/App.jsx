@@ -17,6 +17,11 @@ function App() {
     //JSON.stringify(notes)にて、notesの中身を文字列に変換している。そのためローカルストレージにて文字列として見ることができる。
   }, [notes]);
 
+useEffect(() => {
+  setActiveNote(notes[0].id);
+}, []);
+//上記記入をすることによって、最初に表示されるノートを設定することができる。
+
   const onAddNote = () => {
     console.log("add note");
     const newNote = {
