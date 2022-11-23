@@ -6,14 +6,16 @@ import uuid from "react-uuid";
 import { useEffect } from "react";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(localStorage.getItem("notes") || []);
   const [activeNote, setActiveNote] = useState(false);
 
-useEffect(() => {
-  //ローカルストレージに保存する。
-  //ローカルストレージに保存することによって、ブラウザを閉じてもデータが消えない環境の構築が可能となる。
-
-},[notes])
+  useEffect(() => {
+    //ローカルストレージに保存する。
+    //ローカルストレージに保存することによって、ブラウザを閉じてもデータが消えない環境の構築が可能となる。
+    localStorage.setItem("notes", JSON.stringify(notes));
+    //上記の記入方法にて、ローカルストレージに保存することができる。
+    //JSON.stringify(notes)にて、notesの中身を文字列に変換している。そのためローカルストレージにて文字列として見ることができる。
+  }, [notes]);
 
   const onAddNote = () => {
     console.log("add note");
@@ -59,7 +61,7 @@ useEffect(() => {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote}/>
+      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
     </div>
   );
 }
