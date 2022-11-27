@@ -6,7 +6,9 @@ import uuid from "react-uuid";
 import { useEffect } from "react";
 
 function App() {
-  const [notes, setNotes] = useState(JSON.perse(localStorage.getItem("notes") || []));
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes")) || []
+  );
   const [activeNote, setActiveNote] = useState(false);
 
   useEffect(() => {
@@ -17,10 +19,8 @@ function App() {
     //JSON.stringify(notes)にて、notesの中身を文字列に変換している。そのためローカルストレージにて文字列として見ることができる。
   }, [notes]);
 
-useEffect(() => {
-  setActiveNote(notes[0].id);
-}, []);
-//上記記入をすることによって、最初に表示されるノートを設定することができる。
+  
+  //上記記入をすることによって、最初に表示されるノートを設定することができる。
 
   const onAddNote = () => {
     console.log("add note");
