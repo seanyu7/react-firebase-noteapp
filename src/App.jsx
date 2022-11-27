@@ -20,7 +20,6 @@ function App() {
   }, [notes]);
 
   
-  //上記記入をすることによって、最初に表示されるノートを設定することができる。
 
   const onAddNote = () => {
     console.log("add note");
